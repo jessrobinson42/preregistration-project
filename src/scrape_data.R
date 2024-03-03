@@ -51,11 +51,11 @@ sociology_data <-attributes_data %>%
 
 rm(attributes_data)
 
-write_csv(sociology_data, "sociology_registrations.csv")
+write_csv(sociology_data, "sociology_registrations.csv") 
+#can use this list of all sociology registrations for all future API calls!
 
 #create sosc registration id list
 id_list <- sociology_data$id %>% unique()
-
 
 cont_ids <- list()
 contributors <- list()
