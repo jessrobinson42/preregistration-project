@@ -1,6 +1,6 @@
 #load libraries
 library(pacman)
-p_load(tidyverse, janitor, rvest, httr, jsonlite)
+p_load(tidyverse, janitor, rvest, httr, jsonlite, tictoc)
        
 #documentation: https://developer.osf.io/#operation/registrations_list
 #example: https://api.osf.io/v2/registrations/?page=856
@@ -12,6 +12,7 @@ ids <- list()
 
 pages <- 1:15870
 
+tic()
 for (i in pages) {
   
   registrations <- list()
@@ -34,6 +35,7 @@ rm(registrations)
 rm(returns)
 
 }
+toc()
 
 #bind attributes data
 attributes_data <- bind_rows(attributes)
